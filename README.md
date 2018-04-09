@@ -1,6 +1,4 @@
 # SpriteTip
 Azure Media Player (AMP) plugin for timeline rendering of a video thumbnail image sprite that is generated from Azure Media Services (AMS) Media Encoder Standard (MES).
 
-Here is a sample illustration of the Sprite Tip plugin as it is rendered during player timeline scrubbing.
-
-![](http://skystorage.azureedge.net/Shot13-MediaThumbnailSprite.png)
+For an example of the Sprite Tip plugin with a sample AMS asset (Tears of Steel), check out http://www.skymedia.tv/asset/sprite
