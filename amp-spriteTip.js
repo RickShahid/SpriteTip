@@ -3,11 +3,11 @@
     amp.plugin("spriteTip", function (options) {
         var player = this;
         player.addEventListener(amp.eventName.loadeddata, function () {
-            GetThumbnailTrack(player, options);
+            GetThumbnailTrack(player);
         });
     });
 }).call(this);
-function GetThumbnailTrack(player, options) {
+function GetThumbnailTrack(player) {
     var textTracks = player.textTracks();
     for (var i = 0; i < textTracks.length; i++) {
         var textTrack = textTracks[i];
@@ -53,7 +53,7 @@ function InitializeSprite(player) {
             if (cue.startTime <= timeSeconds && cue.endTime >= timeSeconds) {
                 var xywh = cue.text.split("=")[1].split(",");
                 var spriteImg = document.getElementById("spriteImg");
-                spriteImg.style.background = "url('" + _imgUrl + "') " + xywh[0] + "px " + xywh[1] + "px";
+                spriteImg.style.background = "url('" + _imgUrl + "') " + -xywh[0] + "px " + -xywh[1] + "px";
                 spriteImg.style.width = xywh[2] + "px";
                 spriteImg.style.height = xywh[3] + "px";
                 spriteImg.style.top = -xywh[3] + "px";
