@@ -76,16 +76,15 @@ function GetTimeSeconds(e, player) {
     var seekWidth = seekBar.width();
     var mouseOffset = (e.pageX - seekLeft) / seekWidth;
     var timeSeconds = player.duration() * mouseOffset;
-    SetImageLeft(seekLeft, seekWidth, mouseOffset);
+    SetImageLeft(seekWidth, mouseOffset);
     return timeSeconds;
 }
-function SetImageLeft(seekLeft, seekWidth, mouseOffset) {
+function SetImageLeft(seekWidth, mouseOffset) {
     var spriteImg = document.getElementById("spriteImg");
     var imgLeft = (seekWidth * mouseOffset) - (spriteImg.width / 2);
-    if (imgLeft < seekLeft) {
+    if (imgLeft < 0) {
         imgLeft = 0;
-    }
-    else if (imgLeft + spriteImg.width > seekWidth) {
+    } else if (imgLeft + spriteImg.width > seekWidth) {
         imgLeft = seekWidth - spriteImg.width;  
     }
     spriteImg.style.left = imgLeft + "px";
