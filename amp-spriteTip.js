@@ -52,23 +52,23 @@ function InitializeSprite(player) {
             var cue = _vttCues[i];
             if (cue.startTime <= timeSeconds && cue.endTime >= timeSeconds) {
                 var xywh = cue.text.split("=")[1].split(",");
-                var spriteImg = document.getElementById("spriteImg");
-                spriteImg.style.background = "url('" + _imgUrl + "') " + -xywh[0] + "px " + -xywh[1] + "px";
-                spriteImg.style.width = xywh[2] + "px";
-                spriteImg.style.height = xywh[3] + "px";
-                spriteImg.style.top = -xywh[3] + "px";
-                spriteImg.style.visibility = "visible";
+                var imgSprite = document.getElementById("imgSprite");
+                imgSprite.style.background = "url('" + _imgUrl + "') " + -xywh[0] + "px " + -xywh[1] + "px";
+                imgSprite.style.width = xywh[2] + "px";
+                imgSprite.style.height = xywh[3] + "px";
+                imgSprite.style.top = -xywh[3] + "px";
+                imgSprite.style.visibility = "visible";
             }
         }
     });
     progressBar.addEventListener("mouseout", function () {
-        var spriteImg = document.getElementById("spriteImg");
-        spriteImg.style.visibility = "hidden";
+        var imgSprite = document.getElementById("imgSprite");
+        imgSprite.style.visibility = "hidden";
     });
-    var spriteImg = document.createElement("img");
-    spriteImg.id = "spriteImg";
-    spriteImg.style.position = "absolute";
-    seekBar.appendChild(spriteImg);
+    var imgSprite = document.createElement("img");
+    imgSprite.id = "imgSprite";
+    imgSprite.style.position = "absolute";
+    seekBar.appendChild(imgSprite);
 }
 function GetTimeSeconds(e, player) {
     var seekBar = player.controlBar.progressControl.seekBar;
@@ -80,12 +80,12 @@ function GetTimeSeconds(e, player) {
     return timeSeconds;
 }
 function SetImageLeft(seekWidth, mouseOffset) {
-    var spriteImg = document.getElementById("spriteImg");
-    var imgLeft = (seekWidth * mouseOffset) - (spriteImg.width / 2);
+    var imgSprite = document.getElementById("imgSprite");
+    var imgLeft = (seekWidth * mouseOffset) - (imgSprite.width / 2);
     if (imgLeft < 0) {
         imgLeft = 0;
-    } else if (imgLeft + spriteImg.width > seekWidth) {
-        imgLeft = seekWidth - spriteImg.width;  
+    } else if (imgLeft + imgSprite.width > seekWidth) {
+        imgLeft = seekWidth - imgSprite.width;  
     }
-    spriteImg.style.left = imgLeft + "px";
+    imgSprite.style.left = imgLeft + "px";
 }
