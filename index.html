@@ -14,16 +14,13 @@
                 var mediaPlayer = amp("mediaPlayer", {
                     "plugins": {
                         "spriteTip": {
+                            vttUrl: "//viddy2-usct.streaming.media.azure.net/6e4f1543-7a3e-4199-87c8-76aeb50483a5/Tears of Steel_000001.vtt",
                         }
                     }
                 });
                 mediaPlayer.src(
                     [{
                         src: "//viddy2-usct.streaming.media.azure.net/6e4f1543-7a3e-4199-87c8-76aeb50483a5/Tears of Steel.ism/manifest",
-                    }],
-                    [{
-                        src: "//viddy2-usct.streaming.media.azure.net/6e4f1543-7a3e-4199-87c8-76aeb50483a5/Tears of Steel_000001.vtt",
-                        kind: "thumbnails"
                     }]
                 );
             })

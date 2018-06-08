@@ -3,25 +3,18 @@
     amp.plugin("spriteTip", function (options) {
         var player = this;
         player.addEventListener(amp.eventName.loadeddata, function () {
-            GetThumbnailTrack(player);
+            GetThumbnailTrack(player, options.vttUrl);
         });
     });
 }).call(this);
-function GetThumbnailTrack(player) {
-    var textTracks = player.textTracks();
-    for (var i = 0; i < textTracks.length; i++) {
-        var textTrack = textTracks[i];
-        if (textTrack.src.indexOf(".vtt") > -1 && _vttCues.length == 0) {
-            var xhr = new XMLHttpRequest();
-            xhr.onload = function () {
-                var vttUrl = textTrack.src;
-                var vttData = xhr.responseText;
-                ParseThumbnailTrack(player, vttUrl, vttData);
-            };
-            xhr.open("GET", textTrack.src, true);
-            xhr.send();
-        }
-    }
+function GetThumbnailTrack(player, vttUrl) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        var vttData = xhr.responseText;
+        ParseThumbnailTrack(player, vttUrl, vttData);
+    };
+    xhr.open("GET", vttUrl, true);
+    xhr.send();
 }
 function ParseThumbnailTrack(player, vttUrl, vttData) {
     var decoder = WebVTT.StringDecoder();
