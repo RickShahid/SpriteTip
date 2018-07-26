@@ -18,7 +18,7 @@ function GetThumbnailTrack(player, vttUrl) {
 }
 function ParseThumbnailTrack(player, vttUrl, vttData) {
     var decoder = WebVTT.StringDecoder();
-    var parser = new WebVTT.Parser(window, decoder);
+    var parser = new WebVTT.Parser(window, window.vttjs, decoder);
     parser.oncue = function (cue) {
         if (cue.text.indexOf("#xywh=") > -1) {
             if (_imgUrl == null) {
