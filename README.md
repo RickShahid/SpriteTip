@@ -4,4 +4,4 @@ Azure Media Player (AMP) plugin for timeline rendering of a video thumbnail imag
 
 For an example of the Sprite Tip plugin in action with a sample AMS encoded asset and thumbnails sprite image, check out http://www.skymedia.tv/asset/sprite
 
-![](http://skymedia.azureedge.net/docs/13.1-ThumbnailSprite.png)
+![](https://skymedia.azureedge.net/docs/13.1-ThumbnailSprite.png)
