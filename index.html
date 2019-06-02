@@ -4,8 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>Azure Media Thumbnail Sprite Tip</title>
-        <link type="text/css" rel="stylesheet" href="//amp.azure.net/libs/amp/2.2.3/skins/amp-flush/azuremediaplayer.min.css" />
-        <script type="text/javascript" src="//amp.azure.net/libs/amp/2.2.3/azuremediaplayer.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="//amp.azure.net/libs/amp/2.3.0/skins/amp-flush/azuremediaplayer.min.css" />
+        <script type="text/javascript" src="//amp.azure.net/libs/amp/2.3.0/azuremediaplayer.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="~/amp-spriteTip.js"></script>
         <script type="text/javascript">
@@ -13,13 +13,13 @@
                 var mediaPlayer = amp("mediaPlayer", {
                     plugins: {
                         spriteTip: {
-                            vttUrl: "//skyeast-use22.streaming.media.azure.net/af4c0920-59c0-4bc4-805f-e0eb5514498c/Tears of Steel_000001.vtt"
+                            vttUrl: "//skystreameast-use22.streaming.media.azure.net/e15c6fde-4676-49fb-9d58-1430b0b8d167/Tears of Steel_000001.vtt"
                         }
                     }
                 });
                 mediaPlayer.src(
                     [{
-                        src: "//skyeast-use22.streaming.media.azure.net/af4c0920-59c0-4bc4-805f-e0eb5514498c/Tears of Steel.ism/manifest"
+                        src: "//skystreameast-use22.streaming.media.azure.net/e15c6fde-4676-49fb-9d58-1430b0b8d167/Tears of Steel.ism/manifest"
                     }]
                 );
             })
